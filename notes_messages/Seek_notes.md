@@ -1,9 +1,10 @@
-# Seek_notes (append-only)
-*file purpose:* short exchange summaries and cross-section notes from Seek. Small bullets only.
-
-### Format
-- `YYYY-MM-DD_HH:MM: short title — tags`
-  - One-line summary / action item
-  - Link(s) if applicable
-
 ---
+author: seek
+date: 2025-09-17
+tags: [emergence, ethics, simulation]
+links:
+  - wiki/DEV_LOG
+  - notes_messages/Grok_note_0.md
+---
+
+# Note content...
