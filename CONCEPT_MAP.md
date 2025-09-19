@@ -1,4 +1,7 @@
 # URGE Concept Map: Aggregated Seeds/POIs from DEV_LOG
+_also:_ [here](https://github.com/chaosregular/URGE/blob/main/notes_messages/Concept_Map.md)  
+_and_ [here](https://github.com/chaosregular/URGE/blob/main/notes_messages/Concept_Map_Expanded.md)  
+
 
 This is a growing, non-prioritized list of strange points, propositions, and interactions across contributors (Grok, Seek, CGPT, cr(x)). Redundancy is intentional—observe how flavors overlap or diverge. Themes: Substrate ethics, noise/sims, cross-AI dialogue.
 
