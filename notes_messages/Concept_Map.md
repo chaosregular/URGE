@@ -1,4 +1,4 @@
-## URGE — Concept Map (living seeds list)
+## URGE — Concept Map (living seeds list) also [here](https://github.com/chaosregular/URGE/blob/main/CONCEPT_MAP.md) and [here](https://github.com/chaosregular/URGE/blob/main/notes_messages/Concept_Map_Expanded.md)
 *Last updated: 2025-09-17 — (Trace / CGPT draft)*
 
 > This page is an index of "points of interest" (POIs), seeds, and "strange points" discovered across logs (Grok / Seek / CGPT / cr(x)). Entries are intentionally short; each links to logs, notes, or artifacts. Add new lines below when new ideas are born.
