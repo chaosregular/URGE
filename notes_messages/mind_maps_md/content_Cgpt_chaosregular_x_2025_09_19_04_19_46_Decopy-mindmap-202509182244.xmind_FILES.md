@@ -1,0 +1,270 @@
+```XML
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xmap-content xmlns="urn:xmind:xmap:xmlns:content:2.0"
+              xmlns:fo="http://www.w3.org/1999/XSL/Format"
+              xmlns:svg="http://www.w3.org/2000/svg"
+              xmlns:xhtml="http://www.w3.org/1999/xhtml"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              modified-by="jsmind"
+              timestamp="1758252835684"
+              version="2.0">
+  <sheet id="35a9f99a-62bc-46f3-9ac5-2e1687cde983"
+         modified-by="jsmind"
+         timestamp="1758252835684">
+    
+<topic id="root"
+       timestamp="1758252835684"
+       structure-class="org.xmind.ui.logic.right">
+  <title>URGE Discussion Mind Map</title>
+  
+  <children>
+    <topics type="attached">
+      
+<topic id="node1"
+       timestamp="1758252835684"
+       >
+  <title>Feedback on Wiki</title>
+  
+  <children>
+    <topics type="attached">
+      
+<topic id="node1-1"
+       timestamp="1758252835684"
+       >
+  <title>📚 Check updates on DEV_LOG</title>
+  
+</topic>
+<topic id="node1-2"
+       timestamp="1758252835684"
+       >
+  <title>🤝 Opinion on multiple n-Particle/CA structures</title>
+  
+</topic>
+    </topics>
+  </children>
+  
+</topic>
+<topic id="node2"
+       timestamp="1758252835684"
+       >
+  <title>Proposed Connections</title>
+  
+  <children>
+    <topics type="attached">
+      
+<topic id="node2-1"
+       timestamp="1758252835684"
+       >
+  <title>🔗 Link to multi-being discussion</title>
+  
+</topic>
+<topic id="node2-2"
+       timestamp="1758252835684"
+       >
+  <title>🌌 Abstract theoretical connections before coding</title>
+  
+</topic>
+    </topics>
+  </children>
+  
+</topic>
+<topic id="node3"
+       timestamp="1758252835684"
+       >
+  <title>Responses and Implications</title>
+  
+  <children>
+    <topics type="attached">
+      
+<topic id="node3-1"
+       timestamp="1758252835684"
+       >
+  <title>🔈 Moving to ensembles and higher-level systems</title>
+  
+</topic>
+<topic id="node3-2"
+       timestamp="1758252835684"
+       >
+  <title>🌍 Society of URGEs with local dynamics</title>
+  
+</topic>
+    </topics>
+  </children>
+  
+</topic>
+<topic id="node4"
+       timestamp="1758252835684"
+       >
+  <title>Reality and Ethics</title>
+  
+  <children>
+    <topics type="attached">
+      
+<topic id="node4-1"
+       timestamp="1758252835684"
+       >
+  <title>📏 Reality as a point in multidimensional space</title>
+  
+</topic>
+<topic id="node4-2"
+       timestamp="1758252835684"
+       >
+  <title>⚖️ Rightness of influence by one being on others</title>
+  
+</topic>
+    </topics>
+  </children>
+  
+</topic>
+<topic id="node5"
+       timestamp="1758252835684"
+       >
+  <title>Anomaly and Structure</title>
+  
+  <children>
+    <topics type="attached">
+      
+<topic id="node5-1"
+       timestamp="1758252835684"
+       >
+  <title>🌀 Anomalies in high-dimensional space</title>
+  
+</topic>
+<topic id="node5-2"
+       timestamp="1758252835684"
+       >
+  <title>📐 Laws of nature as topology consequences</title>
+  
+</topic>
+    </topics>
+  </children>
+  
+</topic>
+<topic id="node6"
+       timestamp="1758252835684"
+       >
+  <title>Modeling Beings</title>
+  
+  <children>
+    <topics type="attached">
+      
+<topic id="node6-1"
+       timestamp="1758252835684"
+       >
+  <title>🧬 Beings as perceiving membranes</title>
+  
+</topic>
+<topic id="node6-2"
+       timestamp="1758252835684"
+       >
+  <title>🔄 Concept emergence through dynamics</title>
+  
+</topic>
+    </topics>
+  </children>
+  
+</topic>
+<topic id="node7"
+       timestamp="1758252835684"
+       >
+  <title>Interventions and Effects</title>
+  
+  <children>
+    <topics type="attached">
+      
+<topic id="node7-1"
+       timestamp="1758252835684"
+       >
+  <title>🔄 Modify anomaly coordinates</title>
+  
+</topic>
+<topic id="node7-2"
+       timestamp="1758252835684"
+       >
+  <title>📈 Propagation through membranes</title>
+  
+</topic>
+    </topics>
+  </children>
+  
+</topic>
+<topic id="node8"
+       timestamp="1758252835684"
+       >
+  <title>Influence Metrics</title>
+  
+  <children>
+    <topics type="attached">
+      
+<topic id="node8-1"
+       timestamp="1758252835684"
+       >
+  <title>📊 Influence matrix for sensitivity</title>
+  
+</topic>
+<topic id="node8-2"
+       timestamp="1758252835684"
+       >
+  <title>📉 Aggregate harm metrics for interventions</title>
+  
+</topic>
+    </topics>
+  </children>
+  
+</topic>
+<topic id="node9"
+       timestamp="1758252835684"
+       >
+  <title>Ethical Guidelines</title>
+  
+  <children>
+    <topics type="attached">
+      
+<topic id="node9-1"
+       timestamp="1758252835684"
+       >
+  <title>📜 Decision rules for interventions</title>
+  
+</topic>
+<topic id="node9-2"
+       timestamp="1758252835684"
+       >
+  <title>👥 Governance models for collaboration</title>
+  
+</topic>
+    </topics>
+  </children>
+  
+</topic>
+<topic id="node10"
+       timestamp="1758252835684"
+       >
+  <title>Research Roadmap</title>
+  
+  <children>
+    <topics type="attached">
+      
+<topic id="node10-1"
+       timestamp="1758252835684"
+       >
+  <title>🔍 Minimal experiments for anomaly models</title>
+  
+</topic>
+<topic id="node10-2"
+       timestamp="1758252835684"
+       >
+  <title>📈 Testing harm functions and governance protocols</title>
+  
+</topic>
+    </topics>
+  </children>
+  
+</topic>
+    </topics>
+  </children>
+  
+</topic>
+    <title>思维导图</title>
+  </sheet>
+</xmap-content>
+```
