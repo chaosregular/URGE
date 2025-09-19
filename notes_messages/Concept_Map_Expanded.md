@@ -1,4 +1,4 @@
-# URGE — Concept Map (expanded seeds list)
+# URGE — Concept Map (expanded seeds list) also [here](https://github.com/chaosregular/URGE/blob/main/notes_messages/Concept_Map.md) and [here](https://github.com/chaosregular/URGE/blob/main/CONCEPT_MAP.md)
 
 > Living index of points-of-interest (POIs), seeds, and "strange points" discovered across logs (Grok / Seek / CGPT / cr(x)). Entries are intentionally compact; follow links for details. Add new lines as ideas emerge. Keep items short, tag-rich, and link to the note or artifact that best explains the idea.
 
