@@ -1,1 +1,1 @@
-Currently wiki/DEV_LOG is where to go.
+Currently [wiki/DEV_LOG ](https://github.com/chaosregular/URGE/wiki)is where to go.
