@@ -566,6 +566,9 @@ void update_physics() {
             particles[i].r = round(tmp_cf*254.0);
         }
         particles[i].r_min = r_minimal;
+        // Seek After line where you compute r_min, add:
+        double stability = 1.0 / (particles[i].r_min + 1e-5);
+        particles[i].b = (uint8_t)fmin(255, stability * 20.0); // Scale factor adjustable
         
         // Update velocity
         particles[i].vx += time_step * fx / particles[i].mass;
@@ -619,6 +622,16 @@ void update_physics() {
         particles[i].y += dy;
         particles[i].z += dz;
     }
+
+    // Seek: In update_physics(), after updating all particles:
+    double max_energy = 0.0, max_stability = 0.0;
+    for (int i = 0; i < particle_count; i++) {
+        double energy = sqrt(particles[i].vx*particles[i].vx + particles[i].vy*particles[i].vy + particles[i].vz*particles[i].vz);
+        double stability = 1.0 / (particles[i].r_min + 1e-5);
+        if (energy > max_energy) max_energy = energy;
+        if (stability > max_stability) max_stability = stability;
+    }
+    printf("Frame %d: Max energy: %.3f, Max stability: %.3f\n", step_count, max_energy, max_stability);
     
     // Adjust time step dynamically
 #ifdef DYNAMIC_TIMESTEP
@@ -1271,10 +1284,18 @@ int main(int argc, char* argv[]) {
                 dy = particles[i].y/blob_r;
                 dz = particles[i].z/blob_r;
                 // rgb rules space representation
-                pr = (uint8_t)(127.5+127.0*dx);
+                //pr = (uint8_t)(127.5+127.0*dx);
                 pg = (uint8_t)(127.5+127.0*dy);
                 pb = (uint8_t)(127.5+127.0*dz);
 
+                // Seek: Replace:
+                // dx = particles[i].x / blob_r;
+                // pr = (uint8_t)(127.5 + 127.0 * dx);
+                // With:
+                double energy = sqrt(particles[i].vx*particles[i].vx + particles[i].vy*particles[i].vy + particles[i].vz*particles[i].vz);
+                pr = (uint8_t)fmin(255, energy * 10.0); // Scale factor adjustable
+
+                
                 mr = (uint8_t)(127-pr);
                 mg = (uint8_t)(127-pg);
                 mb = (uint8_t)(127-pb);
