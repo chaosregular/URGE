@@ -96,8 +96,10 @@ typedef struct {
     double x, y, z;
     double vx, vy, vz;
     double mass;
-    Uint8 r, g, b;
-    double r_min; //chaosregular(x)2025-08-01_06:32:37    (for time step)
+    Uint8 r, g, b, a;
+    double r_min; //chaosregular(x)2025-08-01_06:32:37    (for time step)    
+    // Seek: Add well_being to Particle struct:
+    double well_being; // Updated each frame
     // For structure analysis
     double min_dist_buffer[BUFFER_SIZE];
     int buffer_index;
@@ -572,6 +574,21 @@ void update_physics() {
         // Seek After line where you compute r_min, add:
         double stability = 1.0 / (particles[i].r_min + 1e-5);
         particles[i].b = (uint8_t)fmin(255, stability * 20.0); // Scale factor adjustable
+
+        //Seek: You can approximate the potential energy for a particle as the sum of attractive flip-force contributions from all other particles:
+        double potential_energy = 0.0;
+        for (int j = 0; j < particle_count; j++) {
+            if (i == j) continue;
+            double dx = particles[j].x - particles[i].x;
+            double dy = particles[j].y - particles[i].y;
+            double dz = particles[j].z - particles[i].z;
+            double r = sqrt(dx*dx + dy*dy + dz*dz);
+            if (r > MIN_FLIP_DISTANCE) {
+                potential_energy += G_CONSTANT_ATTRACTIVE / r; // Flip-force attractive component
+            }
+        }
+        particles[i].b = (uint8_t)fmin(255, potential_energy * 0.1); // Scale as needed
+        
         
         // Update velocity
         particles[i].vx += time_step * fx / particles[i].mass;
@@ -1277,6 +1294,8 @@ int main(int argc, char* argv[]) {
             // update rules chaosregular(x)2025-08-14_20:48:15
             // chaosregular(x)2025-08-15_15:04:04 'poprawki'
             for (int i = 0; i < particle_count; i++) {
+                
+                
                 uint8_t pr,pg,pb; // particle physical location translated to rgb rules space
                 uint8_t mr,mg,mb; // particle physical location translated to rgb rules space for modification source
                 int gx,gy; // pozycja w GRID z x,y,z  -> gridx,gridy
@@ -1316,7 +1335,11 @@ int main(int argc, char* argv[]) {
                 dvx = (127.5-grid[current][gx][gy].R)*SPEED_FEED;
                 dvy = (127.5-grid[current][gx][gy].G)*SPEED_FEED;
 
-
+                // In update loop:
+                double ca_value = grid[current][gx][gy].R; // Or use a combination of R,G,B
+                particles[i].well_being = 0.95 * particles[i].well_being + 0.05 * (ca_value - 128); // Low-pass filter
+                particles[i].a = (uint8_t)fmin(255, (particles[i].well_being + 128)); // Map to blue channel
+                
                 // grid[current][gx][gy].R = rules[pr][pg][pb].R;
                 // grid[current][gx][gy].G = rules[pr][pg][pb].G;
                 // grid[current][gx][gy].B = rules[pr][pg][pb].B;
@@ -1426,7 +1449,9 @@ void render_particles(SDL_Renderer* renderer) {
             particles[i].r, 
             particles[i].g, 
             particles[i].b, 
-            alpha_z);
+            particles[i].a);
+
+            // alpha_z);
         
         int sx, sy;
         project_3d_to_2d(particles[i].x, particles[i].y, particles[i].z, &sx, &sy);
