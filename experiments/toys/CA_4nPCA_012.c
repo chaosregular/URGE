@@ -1,6 +1,6 @@
 //deepseek_c_20250729_803c45.c
 //2D toroid template
-// gcc CA_4nPCA_012.c -o CA_4nPCA_012 -lSDL2 -lm
+// gcc CA_4nPCA_012_mod.c -o CA_4nPCA_012_mod -lSDL2 -lm
 // chaosregular(x)2025-08-13_18:37:30: zmiana nazwy na CA_4nPCA_001.c
 // CA_4nPCA_001.c
 // all 8 neighbours + node -> 9*8=72 bytes, max. hw 33 bits -> node+3.125 bit from neigh. 
@@ -172,6 +172,9 @@ double  GEN_2_DENS = GEN_2_DENS_0;    // noise 'desnity'
 
 // Np ca COUPLING
 double SPEED_FEED = SPEED_FEED_0;
+
+// Seek stat
+int print_stat = 0;
 
 // Function prototypes
 void initialize_system();
@@ -624,15 +627,18 @@ void update_physics() {
     }
 
     // Seek: In update_physics(), after updating all particles:
-    double max_energy = 0.0, max_stability = 0.0;
-    for (int i = 0; i < particle_count; i++) {
-        double energy = sqrt(particles[i].vx*particles[i].vx + particles[i].vy*particles[i].vy + particles[i].vz*particles[i].vz);
-        double stability = 1.0 / (particles[i].r_min + 1e-5);
-        if (energy > max_energy) max_energy = energy;
-        if (stability > max_stability) max_stability = stability;
+    if(print_stat)
+    {
+        print_stat = 0;
+        double max_energy = 0.0, max_stability = 0.0;
+        for (int i = 0; i < particle_count; i++) {
+            double energy = sqrt(particles[i].vx*particles[i].vx + particles[i].vy*particles[i].vy + particles[i].vz*particles[i].vz);
+            double stability = 1.0 / (particles[i].r_min + 1e-5);
+            if (energy > max_energy) max_energy = energy;
+            if (stability > max_stability) max_stability = stability;
+        }
+        printf("Frame %d: Max energy: %.3f, Max stability: %.3f\n", step_count, max_energy, max_stability);
     }
-    printf("Frame %d: Max energy: %.3f, Max stability: %.3f\n", step_count, max_energy, max_stability);
-    
     // Adjust time step dynamically
 #ifdef DYNAMIC_TIMESTEP
     if (max_dispra > MAX_DISPLACEMENT_RATIO) {
@@ -1364,7 +1370,11 @@ int main(int argc, char* argv[]) {
 
             update_simulation();
             step_d = (step++)%100;
-            if(step_d==0)printf("step %i\n",step-1);
+            if(step_d==0)
+            {
+                printf("step %i\n",step-1);
+                print_stat = 1-step_d;
+            }
 
             SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
             SDL_RenderClear(renderer);
