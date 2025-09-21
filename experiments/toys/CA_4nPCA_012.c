@@ -573,7 +573,7 @@ void update_physics() {
         particles[i].r_min = r_minimal;
         // Seek After line where you compute r_min, add:
         double stability = 1.0 / (particles[i].r_min + 1e-5);
-        particles[i].b = (uint8_t)fmin(255, stability * 20.0); // Scale factor adjustable
+        particles[i].a = (uint8_t)fmin(255, stability * 20.0); // Scale factor adjustable
 
         //Seek: You can approximate the potential energy for a particle as the sum of attractive flip-force contributions from all other particles:
         double potential_energy = 0.0;
@@ -1336,9 +1336,9 @@ int main(int argc, char* argv[]) {
                 dvy = (127.5-grid[current][gx][gy].G)*SPEED_FEED;
 
                 // In update loop:
-                double ca_value = grid[current][gx][gy].R; // Or use a combination of R,G,B
+                double ca_value = (grid[current][gx][gy].R-grid[current][gx][gy].G+grid[current][gx][gy].B); // Or use a combination of R,G,B
                 particles[i].well_being = 0.95 * particles[i].well_being + 0.05 * (ca_value - 128); // Low-pass filter
-                particles[i].a = (uint8_t)fmin(255, (particles[i].well_being + 128)); // Map to blue channel
+                particles[i].b = (uint8_t)fmin(255, (particles[i].well_being + 128)); // Map to alpha channel
                 
                 // grid[current][gx][gy].R = rules[pr][pg][pb].R;
                 // grid[current][gx][gy].G = rules[pr][pg][pb].G;
