@@ -63,3 +63,66 @@ void being_update_internal_particles(Being* being, double dt) {
     }
     being_compute_center_of_mass(being);
 }
+
+void being_sense_needs(Being* being, WorldCell** world, int width, int height) {
+    int x = (int)being->world_x;
+    int y = (int)being->world_y;
+    
+    // Clamp coordinates to world bounds
+    if (x < 0) x = 0;
+    if (x >= width) x = width - 1;
+    if (y < 0) y = 0;
+    if (y >= height) y = height - 1;
+    
+    for (int n = 0; n < NUM_NEEDS; n++) {
+        being->need_levels[n] = world[y][x].channels[n];
+    }
+}
+
+void being_decide_movement(Being* being, WorldCell** world, int width, int height, double* dx, double* dy) {
+    int x = (int)being->world_x;
+    int y = (int)being->world_y;
+    
+    // Clamp coordinates
+    if (x < 1) x = 1;
+    if (x >= width-1) x = width - 2;
+    if (y < 1) y = 1;
+    if (y >= height-1) y = height - 2;
+    
+    *dx = 0.0;
+    *dy = 0.0;
+    
+    // Move along gradients based on internal state
+    for (int n = 0; n < NUM_NEEDS; n++) {
+        // Weight by how important this need is to the being
+        double weight = 1.0;
+        if (n == NEED_FOOD) weight = 1.0 - being->center_of_mass[AXIS_EFFORT]; // Lazy beings seek food more
+        if (n == NEED_SAFETY) weight = being->center_of_mass[AXIS_CAUTION]; // Cautious beings seek safety
+        if (n == NEED_SOCIAL) weight = being->center_of_mass[AXIS_SOCIAL]; // Social beings seek company
+        
+        *dx += world[y][x].gradient_x[n] * weight * 0.1;
+        *dy += world[y][x].gradient_y[n] * weight * 0.1;
+    }
+    
+    // Add some randomness
+    *dx += ((double)rand() / RAND_MAX - 0.5) * 0.05;
+    *dy += ((double)rand() / RAND_MAX - 0.5) * 0.05;
+}
+
+void being_update_vitality(Being* being, WorldCell** world, int width, int height, double decay_rate) {
+    // Vitality increases when needs are met, decreases otherwise
+    double satisfaction = 0.0;
+    for (int n = 0; n < NUM_NEEDS; n++) {
+        satisfaction += being->need_levels[n];
+    }
+    satisfaction /= NUM_NEEDS;
+    
+    being->vitality += (satisfaction - 0.5) * 0.01; // Increase if needs met, decrease otherwise
+    being->vitality -= decay_rate; // Base decay
+    
+    // Clamp vitality
+    if (being->vitality < 0.0) being->vitality = 0.0;
+    if (being->vitality > 1.0) being->vitality = 1.0;
+    
+    being->age += 0.01;
+}
