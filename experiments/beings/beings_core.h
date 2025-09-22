@@ -66,6 +66,10 @@ Being* being_create(double x, double y, int id);
 void being_update_internal_particles(Being* being, double dt);
 void being_compute_center_of_mass(Being* being);
 
+void being_sense_needs(Being* being, WorldCell** world, int width, int height);
+void being_decide_movement(Being* being, WorldCell** world, int width, int height, double* dx, double* dy);
+void being_update_vitality(Being* being, WorldCell** world, int width, int height, double decay_rate);
+
 #endif
 
 
