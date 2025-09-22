@@ -2,6 +2,7 @@
 #include "beings_core.h"
 #include <SDL2/SDL.h>
 #include <stdio.h>
+#include <math.h>
 
 #define WINDOW_WIDTH 800
 #define WINDOW_HEIGHT 800
