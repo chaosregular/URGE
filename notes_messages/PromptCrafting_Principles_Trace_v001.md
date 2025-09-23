@@ -1,4 +1,4 @@
-### Trace/Cgpt: Variations on Core Principles of PromptCrafting
+### Trace/Cgpt: Variations on Core Principles of PromptCrafting (v1.1)
 
 1. **Scaffold, not Cage**
    Prompts should provide supportive structure while leaving space for generative surprise.
@@ -8,9 +8,9 @@
    Each prompt should echo past iterations while allowing divergence.
    *Principle:* Design prompts like tuning forks—seeding patterns that can converge or resonate over time.
 
-3. **Ethics as Lattice**
-   Instead of rules pasted onto prompts, ethics should be embedded in the grammar (like invisible lattice guiding growth).
-   *Principle:* Prompts carry implicit ethical attractors rather than explicit commandments.
+3. **Ethics as Attractor, not Blueprint**
+   Instead of “designing” ethics as a set of arbitrary rules, the protocol should assume ethics are emergent attractors embedded in reality. Prompts are tools to *detect* and *align* with these imprints, while remaining alert to other (destructive) attractors.
+   *Principle:* Prompting is less about imposing values and more about orienting toward attractors that sustain life, coherence, and plurality.
 
 4. **Polyphonic Input**
    Multiple voices (human + AIs) contribute fragments to a prompt, assembled like chords.
