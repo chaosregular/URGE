@@ -1,3 +1,5 @@
+Tags: [ontology, epistemics, membrane, synchronization, attractor-hunting]
+
 ### My Reaction
 
 1. **Continuity of Themes**
