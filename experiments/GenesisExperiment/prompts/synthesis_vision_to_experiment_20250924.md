@@ -1,4 +1,4 @@
-File: prompts/synthesis_vision_to_experiment_20250924.md 
+File: experiments/GenesisExperiment/prompts/synthesis_vision_to_experiment_20250924.md  
 Prompt: Synthesis from Vision to Experiment 
 
 Version: 0.1 
