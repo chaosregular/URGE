@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 from sklearn.cluster import HDBSCAN
 import umap.umap_ as umap
 import ast  # For converting the stringified vector back to a list of numbers
+import os   # <--- Add this line
 
 # Check if the input file exists
 if not os.path.exists('proverbs_with_vectors.csv'):
