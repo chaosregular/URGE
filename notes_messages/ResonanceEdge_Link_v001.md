@@ -1,5 +1,5 @@
 # Resonance-Edge Link v001
-URGE ⇄ MorphogenicSimulator integration sketch.
+URGE ⇄ [MorphogenicSimulator](https://github.com/chaosregular/MorphogenicSimulator/wiki) integration sketch.
 
 - URGE explores ethical / conceptual attractors in high-dimensional idea-space.  
 - MorphogenicSimulator tests morphogenesis and probabilistic coherence at physical-simulation scale.  
