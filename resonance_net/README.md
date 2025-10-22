@@ -4,7 +4,7 @@ The **Resonance Net** is URGE’s chunk-based knowledge graph.
 Each chunk (a SAMBA fragment, DEV_LOG entry, experiment, or principle) is a node.  
 Relations between chunks are also written as chunks, making the Net a *graph-of-graphs* where meaning emerges through resonance.
 
-- Resonates with: MorphogenicSimulator/AURA series – experimental substrate of the Resonance Edge.
+- Resonates with: [MorphogenicSimulator](https://github.com/chaosregular/MorphogenicSimulator/wiki)/AURA series – experimental substrate of the Resonance Edge.
 
 ---
 
