@@ -1,3 +1,4 @@
+```
                    ┌────────────────────────────────────────────────┐
                    │                Reality Layer                    │
                    │ (Anomaly field, physical morphogenesis)          │
@@ -21,3 +22,4 @@
                    │  ↕ Resonance / feedback loops ↕      │
                    └──────────────────────────────────────┘
                            (Resonance Net Substrate)
+```
